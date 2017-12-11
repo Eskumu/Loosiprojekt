@@ -1,0 +1,16 @@
+{% extends 'loos/index.html' %}
+
+{% block ticket %}
+    <div class="card text-center">
+        <div class="card-header">
+            Loos number {{ id }}
+        </div>
+    <div class="card-body">
+        <h4 class="card-title">{{ prize_text }}</h4>
+        {% if prize_info %}
+            <p class="card-text">{{ prize_info}} </p>
+        {% endif %}
+    </div>
+
+</div>
+{% endblock ticket %}
