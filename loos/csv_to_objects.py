@@ -32,3 +32,20 @@ def parser(path_to_csv):
             else:
                 print(row, "Something is wrong with the format.")
     return True
+
+def parser_to_csv(path_to_csv):
+    """creates csv file."""
+    rows_to_write = []
+    with open(path_to_csv) as f:
+        reader = csv.reader(f)
+        start_index = 1
+        for row in reader:
+            if row[0].isdigit():
+                rows_to_write.append([f" {start_index}-{start_index + int(row[0])-1}", *row[1:]])
+                start_index += int(row[0])
+            else:
+                print(row, "EI OLE DIGIT")
+    with open('loterii-2017-uus.csv', mode="w") as f:
+        writer = csv.writer(f, lineterminator='\n')
+        writer.writerows(rows_to_write)
+    return True
