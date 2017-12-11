@@ -20,7 +20,6 @@ def parser(path_to_csv):
     from loos.csv_to_objects import parser
     parser('filename.csv')
     """
-    #TODO: add instructions to clean sql table here.
     #TODO: make this function work with previous sql table
     with open(path_to_csv) as f:
         reader = csv.reader(f)
