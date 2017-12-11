@@ -25,7 +25,8 @@ SECRET_KEY = 'giad@$2g53pt7w^yrxf$%g0nl0z(s5uzmqm_5%tbdtkh@1!cnp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1:8000",
+                 "http://viimsiball.pythonanywhere.com"]
 
 
 # Application definition
