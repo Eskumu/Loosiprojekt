@@ -3,12 +3,12 @@
 {% block ticket %}
     <div class="card text-center">
         <div class="card-header">
-            Loos number {{ id }}
+            Loos number {{ ticket.id }}
         </div>
     <div class="card-body">
-        <h4 class="card-title">{{ prize_text }}</h4>
+        <h4 class="card-title">{{ ticket.prize.prize_text }}</h4>
         {% if prize_info %}
-            <p class="card-text">{{ prize_info}} </p>
+            <p class="card-text">{{ ticket.prize.prize_text}} </p>
         {% endif %}
     </div>
 

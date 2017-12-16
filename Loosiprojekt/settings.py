@@ -25,20 +25,22 @@ SECRET_KEY = 'giad@$2g53pt7w^yrxf$%g0nl0z(s5uzmqm_5%tbdtkh@1!cnp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1:8000",
+ALLOWED_HOSTS = ["127.0.0.1",
                  "viimsiball.pythonanywhere.com"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'crispy_forms',
+    'loos',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'loos.apps.LoosConfig',
 ]
 
 MIDDLEWARE = [
@@ -102,6 +104,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Authentication URLs
+# https://docs.djangoproject.com/en/1.10/ref/settings/#login-redirect-url
+
+LOGIN_REDIRECT_URL = ''
+LOGIN_URL = '/login/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
@@ -121,3 +128,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Crispy forms
+# http://django-crispy-forms.readthedocs.io/
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_FAIL_SILENTLY = not DEBUG
